@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 
 
 const coeSchema = mongoose.Schema({
-    // uuid:{
-    //     type: String,
-    //     required: true
-    // },
+    uuid:{
+        type: String,
+        required: true
+    },
     employee_name:{
         type: String,
         required: true,
