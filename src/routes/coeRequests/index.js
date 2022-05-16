@@ -15,8 +15,8 @@ const {
 
 const makeExpressCallback = require("../../express-callback/index");
 
-router.get("/", makeExpressCallback(addNewCoeRequestController));
-// router.get("/", makeExpressCallback(getAllCoeRequestController));
+// router.get("/", makeExpressCallback(addNewCoeRequestController));
+router.get("/", makeExpressCallback(getAllCoeRequestController));
 router.post("/", makeExpressCallback(addNewCoeRequestController));
 // router.post(  "/", makeExpressCallback(addTodosController));
 // router.patch( "/update/:id", makeExpressCallback(updateTodosController));
