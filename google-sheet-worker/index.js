@@ -38,7 +38,7 @@ console.log(currentDate)
 await sheet.getRows({offset:0}).then( res =>{
   // console.log('res',res.rowMetaData)
   for(let rowData of res){
-    console.log('asdasdasdasd',rowData.rowNumber)
+    console.log('asdasdasdasd',rowData)
     // console.log(rowData['Timestamp'].split(" ")[0])
     // if(currentDate == rowData['Timestamp'].split(" ")[0]){
       // console.log('asdasd')
@@ -53,6 +53,9 @@ await sheet.getRows({offset:0}).then( res =>{
         purpose_of_request: rowData['Purpose of Request'],
         // employee_status: rowData['Status of Employee'],
         resume: rowData['Title'],
+        printed: rowData['Printed'],
+        signed: rowData['Signed'],
+        issued: rowData['Issued'],
         rowNum: rowData.rowNumber
       })
     // }
@@ -107,9 +110,9 @@ for(let i =0;i<info.length; i++){
   }
 };
 
-// (async function() {
-// await accessSpreadSheet();
-// }());
+(async function() {
+await accessSpreadSheet();
+}());
 
 
 module.exports = { accessSpreadSheet,addValidationLink };
