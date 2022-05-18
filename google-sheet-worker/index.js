@@ -13,7 +13,7 @@ const accessSpreadSheet = async () => {
   try {
    
 // Initialize the sheet - doc ID is the long id in the sheets URL
-const doc = new GoogleSpreadsheet('1-RK2h1XiSebikI5FFCO_z3BHDd8NeKrLmoTpRqXtCVg');
+const doc = new GoogleSpreadsheet(process.env.SSW);
 let currentDate = moment().format('D/M/YYYY'); 
 // Initialize Auth - see https://theoephraim.github.io/node-google-spreadsheet/#/getting-started/authentication
 await doc.useServiceAccountAuth(creds);
