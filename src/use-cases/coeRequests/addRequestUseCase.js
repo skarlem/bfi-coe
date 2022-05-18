@@ -5,7 +5,7 @@ module.exports = function makeAddNewCoeRequestsUseCase( CoeSchemaModel ) {
 
   return async function addRequest() {
       try {
-        const {accessSpreadSheet} = require('../../../google-sheet-worker/index')
+        const {accessSpreadSheet,addValidationLink} = require('../../../google-sheet-worker/index')
         const spreadsheetData = await accessSpreadSheet();
        
         
@@ -31,10 +31,12 @@ module.exports = function makeAddNewCoeRequestsUseCase( CoeSchemaModel ) {
           }
          
         }
-        console.log(spreadsheetData)
+        const insert = await CoeSchemaModel.create(spreadsheetData);
+        const validate = await addValidationLink(spreadsheetData)
+        // console.log(spreadsheetData)
         // spreadsheetData.uuid = uuid();
         // console.log('sheet data',spreadsheetData)
-        const insert = await CoeSchemaModel.create(spreadsheetData);
+       
           return insert;
       } catch (error) {
           console.log(error)

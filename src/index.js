@@ -1,9 +1,12 @@
+
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongoose = require('mongoose');
 moment = require('moment');
-mongoose.connect('mongodb://bfifarms:Superpw64@95.111.200.10:27017/ecoe');
+// console.log(process.env.DB)
+mongoose.connect(`${process.env.DB}`);
 let db = mongoose.connection;
 
 // const compression = require("compression");
@@ -13,7 +16,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 
-require("dotenv").config();
 
 
 app.get("/", (req, res, next) => {

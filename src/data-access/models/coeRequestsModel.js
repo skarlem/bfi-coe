@@ -30,10 +30,7 @@ const coeSchema = mongoose.Schema({
         type: String,
         required: true,
     },
-    employee_status:{
-        type: String,
-        required: true,
-    },
+    
     timestamp:{
 		type: String,
         required: true,
