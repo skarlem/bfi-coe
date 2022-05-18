@@ -12,7 +12,7 @@ module.exports = function makeAddNewCoeRequestsUseCase( CoeSchemaModel ) {
         const data = await CoeSchemaModel.find();
         const filteredArray = [];
       
-        console.log('db data',data[2  ])
+        console.log('db data',data[2])
        
         let counter =0;
        
