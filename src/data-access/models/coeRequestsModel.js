@@ -30,6 +30,18 @@ const coeSchema = mongoose.Schema({
         type: String,
         required: true,
     },
+    printed:{
+        type: String,
+        required: true,
+    },
+    signed:{
+        type: String,
+        required: true,
+    },
+    issued:{
+        type: String,
+        required: true,
+    },
     
     timestamp:{
 		type: String,

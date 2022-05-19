@@ -11,12 +11,12 @@ module.exports = function makeAddNewCoeRequestsUseCase( CoeSchemaModel ) {
         
         const data = await CoeSchemaModel.find();
         const filteredArray = [];
-      
+      console.log(spreadsheetData)
         console.log('db data',data[2])
        
         let counter =0;
        
-        console.log(spreadsheetData)
+        // console.log(spreadsheetData)
         for(let j =0; j <data.length; j++){
           console.log('number of j ',j)
           for(let i=0; i<spreadsheetData.length; i++){
@@ -33,7 +33,7 @@ module.exports = function makeAddNewCoeRequestsUseCase( CoeSchemaModel ) {
         }
         const insert = await CoeSchemaModel.create(spreadsheetData);
         const validate = await addValidationLink(spreadsheetData)
-        // console.log(spreadsheetData)
+        console.log(spreadsheetData)
         // spreadsheetData.uuid = uuid();
         // console.log('sheet data',spreadsheetData)
        
