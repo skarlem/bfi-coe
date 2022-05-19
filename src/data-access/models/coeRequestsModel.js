@@ -6,6 +6,14 @@ const coeSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    title_status:{
+        type: String,
+        required: true,
+    },
+    type_of_coe:{
+        type: String,
+        required: true,
+    },
     employee_name:{
         type: String,
         required: true,
@@ -14,11 +22,12 @@ const coeSchema = mongoose.Schema({
         type: Number,
         required: true,
     },
-    business_establishment:{
+
+    place_of_assignment:{
         type: String,
         required: true,
     },
-    place_of_assignment:{
+    employee_department:{
         type: String,
         required: true,
     },
@@ -27,6 +36,34 @@ const coeSchema = mongoose.Schema({
         required: true,
     },
     purpose_of_request:{
+        type: String,
+        required: true,
+    },
+    business_establishment:{
+        type: String,
+        required: true,
+    },
+    start_date:{
+        type: String,
+        required: true,
+    },
+    end_date:{
+        type: String,
+        required: true,
+    },
+    contract_end_date:{
+        type: String,
+        required: true,
+    },
+    approver:{
+        type: String,
+        required: true,
+    },
+    issuance_date:{
+        type: String,
+        required: true,
+    },
+    document_link:{
         type: String,
         required: true,
     },
@@ -48,6 +85,14 @@ const coeSchema = mongoose.Schema({
         required: true,
 		// default: Date.now
 	},
+    printed_date:{
+        type: String,
+        required: true,
+    },
+    signed_date:{
+        type: String,
+        required: true,
+    },
     issued_date:{
 		type: String,
         required: true,

@@ -18,23 +18,15 @@ module.exports = function makeUpdateRequests( CoeSchemaModel ) {
           for(let i=0; i<spreadsheetData.length; i++){
             
             let filter = { uuid: spreadsheetData[i].validation_link };
-            let update = { 
-                printed: spreadsheetData[i].printed,
-                signed: spreadsheetData[i].signed,
-                issued: spreadsheetData[i].issued
-            };
+            let update = spreadsheetData[i];
             if(spreadsheetData[i].hasOwnProperty('validation_link')){
                 if(spreadsheetData[i].validation_link === data[j].uuid){
                     let doc = await CoeSchemaModel.findOneAndUpdate(filter, update);
                     updateStatus.push({
-                        uuid : spreadsheetData[i].validation_link,
-                       update
+                        update
                     })
                     console.log({
-                        uuid : spreadsheetData[i].validation_link,
-                        printed :doc.printed,
-                        signed: doc.signed,
-                        issued:doc.issued
+                        update
                     })
                 console.log('asdasdasdasd');
                 

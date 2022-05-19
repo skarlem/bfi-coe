@@ -24,33 +24,35 @@ let result = [];
 let sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
 // console.log(doc.rowCOunt)
 console.log(currentDate)
-// await sheet.loadCells('A1:Q3');
-// // console.log(sheet.cellStats); 
-// const cellA1 = sheet.getCell(0, 0);
-// const cellC3 = sheet.getCellByA1('Q3');
-// // cellA1.note = 'This is cell A1';
-// // cellA1.value = 123.45;
-// // cellA1.textFormat = { bold: true };
-// // cellC3.formula = '=A1';
-// console.log(cellC3.value); // this will throw an error
-// await sheet.saveUpdatedCells(); // saves both cells in one API call
-// console.log(cellC3.value); // 123.45
+//
 await sheet.getRows({offset:0}).then( res =>{
   // console.log('res',res.rowMetaData)
   for(let rowData of res){
     console.log('asdasdasdasd',rowData)
     // console.log(rowData['Timestamp'].split(" ")[0])
-    // if(currentDate == rowData['Timestamp'].split(" ")[0]){
+    if(currentDate == rowData['Timestamp'].split(" ")[0]){
       // console.log('asdasd')
       result.push({
         uuid: uuidv4(),
+        title_status: rowData['Title Status'],
+        type_of_coe : rowData['Type of COE'],
         timestamp: rowData['Timestamp'],
         employee_name: rowData['Employee Name'],
         employee_id_number: rowData['Employee ID Number'],
-        business_establishment: rowData['Business Establishment'],
+       
         place_of_assignment: rowData['Employee Department'],
         employee_position: rowData['Employee Position'],
+        employee_department: rowData['Employee Department'],
         purpose_of_request: rowData['Purpose of Request'],
+        business_establishment: rowData['Business Establishment'],
+        start_date: rowData['Start Date'],
+        end_date: rowData['End Date'],
+        contract_end_date: rowData['Contract End Date'],
+        approver: rowData['Approver'],
+        issuance_date: rowData['Issuance Date'],
+        document_link: rowData['Document Link'],
+        printed_date: rowData['Printed Date'],
+        signed_date: rowData['Signed Date'],
         issued_date:rowData['Issued Date'],
         // employee_status: rowData['Status of Employee'],
         resume: rowData['Title'],
@@ -59,7 +61,7 @@ await sheet.getRows({offset:0}).then( res =>{
         issued: rowData['Issued'],
         rowNum: rowData.rowNumber
       })
-    // }
+    }
    
   }
 }) 
@@ -132,17 +134,30 @@ await sheet.getRows({offset:0}).then( res =>{
   for(let rowData of res){
     console.log('asdasdasdasd',rowData)
     // console.log(rowData['Timestamp'].split(" ")[0])
-    // if(currentDate == rowData['Timestamp'].split(" ")[0]){
+    if(currentDate == rowData['Timestamp'].split(" ")[0]){
       // console.log('asdasd')
       result.push({
         validation_link: rowData['Validation Link'],
+        title_status: rowData['Title Status'],
+        type_of_coe : rowData['Type of COE'],
         timestamp: rowData['Timestamp'],
         employee_name: rowData['Employee Name'],
         employee_id_number: rowData['Employee ID Number'],
-        business_establishment: rowData['Business Establishment'],
+       
         place_of_assignment: rowData['Employee Department'],
         employee_position: rowData['Employee Position'],
+        employee_department: rowData['Employee Department'],
         purpose_of_request: rowData['Purpose of Request'],
+        business_establishment: rowData['Business Establishment'],
+        start_date: rowData['Start Date'],
+        end_date: rowData['End Date'],
+        contract_end_date: rowData['Contract End Date'],
+        approver: rowData['Approver'],
+        issuance_date: rowData['Issuance Date'],
+        document_link: rowData['Document Link'],
+        printed_date: rowData['Printed Date'],
+        signed_date: rowData['Signed Date'],
+        issued_date:rowData['Issued Date'],
         // employee_status: rowData['Status of Employee'],
         resume: rowData['Title'],
         printed: rowData['Printed'],
@@ -150,7 +165,7 @@ await sheet.getRows({offset:0}).then( res =>{
         issued: rowData['Issued'],
         rowNum: rowData.rowNumber
       })
-    // }
+    }
    
   }
 }) 
