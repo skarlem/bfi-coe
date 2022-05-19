@@ -57,11 +57,11 @@ const coeSchema = mongoose.Schema({
     },
     approver:{
         type: String,
-        required: true,
+        required: false,
     },
     issuance_date:{
         type: String,
-        required: true,
+        required: false,
     },
     document_link:{
         type: String,

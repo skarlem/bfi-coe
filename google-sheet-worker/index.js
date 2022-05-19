@@ -28,12 +28,12 @@ console.log(currentDate)
 await sheet.getRows({offset:0}).then( res =>{
   // console.log('res',res.rowMetaData)
   for(let rowData of res){
-    console.log('asdasdasdasd',rowData.rowNumber)
-    console.log(rowData.Timestamp)
-    console.log(typeof rowData['Timestamp'])
+    // console.log('asdasdasdasd',rowData.rowNumber)
+    // console.log(rowData.Timestamp)
+    // console.log(typeof rowData['Timestamp'])
     if(!(typeof rowData['Timestamp'] ==='undefined' || typeof rowData['Timestamp'] ===null) ){
       if(currentDate == rowData['Timestamp'].split(" ")[0]){
-        console.log('asdasdasdasdas')
+        // console.log('asdasdasdasdas')
         // console.log('asdasd')
         result.push({
           uuid: uuidv4(),
