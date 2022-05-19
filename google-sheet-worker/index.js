@@ -139,6 +139,7 @@ await sheet.getRows({offset:0}).then( res =>{
   for(let rowData of res){
     console.log('asdasdasdasd',rowData)
     // console.log(rowData['Timestamp'].split(" ")[0])
+    if(!(typeof rowData['Timestamp'] ==='undefined' || typeof rowData['Timestamp'] ===null) ){
     if(currentDate == rowData['Timestamp'].split(" ")[0]){
       // console.log('asdasd')
       result.push({
@@ -171,6 +172,7 @@ await sheet.getRows({offset:0}).then( res =>{
         rowNum: rowData.rowNumber
       })
     }
+  }
    
   }
 }) 
