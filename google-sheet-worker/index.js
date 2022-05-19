@@ -14,7 +14,7 @@ const accessSpreadSheet = async () => {
    
 // Initialize the sheet - doc ID is the long id in the sheets URL
 const doc = new GoogleSpreadsheet(`${process.env.SSW}`);
-let currentDate = moment().format('D/M/YYYY'); 
+let currentDate = moment().format('M/D/YYYY'); 
 // Initialize Auth - see https://theoephraim.github.io/node-google-spreadsheet/#/getting-started/authentication
 await doc.useServiceAccountAuth(creds);
 
@@ -28,9 +28,10 @@ console.log(currentDate)
 await sheet.getRows({offset:0}).then( res =>{
   // console.log('res',res.rowMetaData)
   for(let rowData of res){
-    console.log('asdasdasdasd',rowData)
-    // console.log(rowData['Timestamp'].split(" ")[0])
+    console.log('asdasdasdasd',currentDate)
+    console.log(rowData['Timestamp'].split(" ")[0])
     if(currentDate == rowData['Timestamp'].split(" ")[0]){
+      console.log('asdasdasdasdas')
       // console.log('asdasd')
       result.push({
         uuid: uuidv4(),
@@ -118,7 +119,7 @@ const fetchForUpdate = async () => {
    
 // Initialize the sheet - doc ID is the long id in the sheets URL
 const doc = new GoogleSpreadsheet(`${process.env.SSW}`);
-let currentDate = moment().format('D/M/YYYY'); 
+let currentDate = moment().format('M/D/YYYY'); 
 // Initialize Auth - see https://theoephraim.github.io/node-google-spreadsheet/#/getting-started/authentication
 await doc.useServiceAccountAuth(creds);
 

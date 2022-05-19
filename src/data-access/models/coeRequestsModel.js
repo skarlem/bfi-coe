@@ -65,19 +65,19 @@ const coeSchema = mongoose.Schema({
     },
     document_link:{
         type: String,
-        required: true,
+        required: false,
     },
     printed:{
         type: String,
-        required: true,
+        required: false,
     },
     signed:{
         type: String,
-        required: true,
+        required: false,
     },
     issued:{
         type: String,
-        required: true,
+        required: false,
     },
     
     timestamp:{
@@ -87,15 +87,15 @@ const coeSchema = mongoose.Schema({
 	},
     printed_date:{
         type: String,
-        required: true,
+        required: false,
     },
     signed_date:{
         type: String,
-        required: true,
+        required: false,
     },
     issued_date:{
 		type: String,
-        required: true,
+        required: false,
 		// default: Date.now
 	}
 
