@@ -47,6 +47,11 @@ const coeSchema = mongoose.Schema({
 		type: String,
         required: true,
 		// default: Date.now
+	},
+    issued_date:{
+		type: String,
+        required: true,
+		// default: Date.now
 	}
 
 })

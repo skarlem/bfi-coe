@@ -51,6 +51,7 @@ await sheet.getRows({offset:0}).then( res =>{
         place_of_assignment: rowData['Employee Department'],
         employee_position: rowData['Employee Position'],
         purpose_of_request: rowData['Purpose of Request'],
+        issued_date:rowData['Issued Date'],
         // employee_status: rowData['Status of Employee'],
         resume: rowData['Title'],
         printed: rowData['Printed'],
