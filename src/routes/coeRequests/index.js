@@ -7,7 +7,8 @@ const router = express.Router();
 const { 
     getAllCoeRequestController ,
     addNewCoeRequestController,
-    updateRequestsController
+    updateRequestsController,
+    getSingleRequestController
 } = require("../../controllers/coeRequests/index");
 
 
@@ -18,6 +19,7 @@ const makeExpressCallback = require("../../express-callback/index");
 
 // router.get("/", makeExpressCallback(addNewCoeRequestController));
 router.get("/fetch/", makeExpressCallback(getAllCoeRequestController));
+router.get("/fetch/:id", makeExpressCallback(getSingleRequestController));
 router.post("/add/", makeExpressCallback(addNewCoeRequestController));
 router.patch("/update/", makeExpressCallback(updateRequestsController));
 // router.post(  "/", makeExpressCallback(addTodosController));
