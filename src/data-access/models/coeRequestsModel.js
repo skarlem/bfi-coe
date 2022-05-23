@@ -37,39 +37,39 @@ const coeSchema = mongoose.Schema({
     },
     purpose_of_request:{
         type: String,
-        required: true,
+        default: null,
     },
     business_establishment:{
         type: String,
-        required: true,
+        default: null,
     },
     start_date:{
         type: String,
-        required: true,
+        default: null,
     },
     end_date:{
         type: String,
-        required: true,
+        default: null,
     },
     contract_end_date:{
         type: String,
-        required: true,
+        default: null,
     },
     approver:{
         type: String,
-        required: false,
+        default: null,
     },
     issuance_date:{
         type: String,
-        required: false,
+        default: null,
     },
     document_link:{
         type: String,
-        required: false,
+        default: null,
     },
     printed:{
         type: String,
-        required: false,
+        default: null,
     },
     signed:{
         type: String,
@@ -77,25 +77,25 @@ const coeSchema = mongoose.Schema({
     },
     issued:{
         type: String,
-        required: false,
+        default: null,
     },
     
     timestamp:{
 		type: String,
-        required: true,
+        default: null,
 		// default: Date.now
 	},
     printed_date:{
         type: String,
-        required: false,
+        default: null,
     },
     signed_date:{
         type: String,
-        required: false,
+        default: null,
     },
     issued_date:{
 		type: String,
-        required: false,
+        default: null,
 		// default: Date.now
 	}
 

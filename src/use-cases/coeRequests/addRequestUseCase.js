@@ -18,12 +18,12 @@ module.exports = function makeAddNewCoeRequestsUseCase( CoeSchemaModel ) {
        
         // console.log(spreadsheetData)
         for(let j =0; j <data.length; j++){
-          console.log('number of j ',j)
+          // console.log('number of j ',j)
           for(let i=0; i<spreadsheetData.length; i++){
             console.log(spreadsheetData[i].timestamp)
             console.log(data[j].timestamp)
             if(spreadsheetData[i].timestamp === data[j].timestamp){
-              console.log('QQQQQQQQQQQQQQQQQQQ')
+              // console.log('QQQQQQQQQQQQQQQQQQQ')
               spreadsheetData.splice(i,1);
               // console.log('number of i ',i)
               // console.log('sheet time', spreadsheetData[i].timestamp)
