@@ -43,14 +43,14 @@ const coeSchema = mongoose.Schema({
         type: String,
         default: null,
     },
-    start_date:{
+    contract_start_date:{
         type: String,
         default: null,
     },
-    end_date:{
-        type: String,
-        default: null,
-    },
+    // end_date:{
+    //     type: String,
+    //     default: null,
+    // },
     contract_end_date:{
         type: String,
         default: null,

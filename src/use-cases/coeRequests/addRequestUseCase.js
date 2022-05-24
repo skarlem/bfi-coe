@@ -34,6 +34,7 @@ module.exports = function makeAddNewCoeRequestsUseCase( CoeSchemaModel ) {
           }
          
         }
+        // console.log(spreadsheetData)
         const insert = await CoeSchemaModel.create(spreadsheetData);
         const validate = await addValidationLink(spreadsheetData)
         console.log('sheet data',spreadsheetData)
