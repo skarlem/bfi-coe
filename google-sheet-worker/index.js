@@ -94,7 +94,7 @@ console.log('infooooooo',info)
 // console.log(doc.rowCOunt)
 for(let i =0;i<info.length; i++){
   let range = `A1:Q${info[i].rowNum}`;
-  let cell = `Q${info[i].rowNum}`;
+  let cell = `P${info[i].rowNum}`;
   console.log('range',range);
   console.log('cell',cell)
   await sheet.loadCells(range);

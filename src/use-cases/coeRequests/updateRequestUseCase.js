@@ -10,7 +10,7 @@ module.exports = function makeUpdateRequests( CoeSchemaModel ) {
        
         
         const data = await CoeSchemaModel.find();
-      
+      console.log(spreadsheetData)
        
       let updateStatus =[];
         for(let j =0; j <data.length; j++){
