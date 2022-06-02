@@ -23,7 +23,7 @@ let result = [];
 
 let sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
 // console.log(doc.rowCOunt)
-console.log(currentDate)
+// console.log(currentDate)
 //
 await sheet.getRows({offset:0}).then( res =>{
   // console.log('res',res.rowMetaData)
@@ -90,13 +90,13 @@ await doc.loadInfo(); // loads document properties and worksheets
 let result = [];
 
 let sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
-console.log('infooooooo',info)
+// console.log('infooooooo',info)
 // console.log(doc.rowCOunt)
 for(let i =0;i<info.length; i++){
   let range = `A1:Q${info[i].rowNum}`;
   let cell = `P${info[i].rowNum}`;
-  console.log('range',range);
-  console.log('cell',cell)
+  // console.log('range',range);
+  // console.log('cell',cell)
   await sheet.loadCells(range);
   // console.log(sheet.cellStats); 
   const cellA1 = sheet.getCell(0, 0);
@@ -107,7 +107,7 @@ for(let i =0;i<info.length; i++){
   // cellC3.formula = '=A1';
    // this will throw an error
   await sheet.saveUpdatedCells();
-  console.log(cellC3.value);
+  // console.log(cellC3.value);
 }
 // console.log(currentDate)
  // saves both cells in one API call
