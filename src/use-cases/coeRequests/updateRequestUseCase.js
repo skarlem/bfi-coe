@@ -10,7 +10,7 @@ module.exports = function makeUpdateRequests( CoeSchemaModel ) {
        
         
         const data = await CoeSchemaModel.find();
-      console.log(spreadsheetData)
+      // console.log(spreadsheetData)
        
       let updateStatus =[];
         for(let j =0; j <data.length; j++){
@@ -20,16 +20,16 @@ module.exports = function makeUpdateRequests( CoeSchemaModel ) {
             let filter = { uuid: spreadsheetData[i].validation_link };
             let update = spreadsheetData[i];
             if(spreadsheetData[i].hasOwnProperty('validation_link')){
-              console.log('naay validation link:::::::::::::::::::::')
+              // console.log('naay validation link:::::::::::::::::::::')
                 if(spreadsheetData[i].validation_link === data[j].uuid){
                     let doc = await CoeSchemaModel.findOneAndUpdate(filter, update);
                     updateStatus.push({
                         update
                     })
-                    console.log({
-                        update
-                    })
-                console.log('asdasdasdasd');
+                    // console.log({
+                    //     update
+                    // })
+                // console.log('asdasdasdasd');
                 
                 } 
             }
