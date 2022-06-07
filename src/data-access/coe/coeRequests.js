@@ -1,7 +1,7 @@
 const { request } = require("express");
 
-module.exports = function coeQuery({
-    pool
+module.exports = function coeRequestsQuery({
+    CoeSchemaModel
   }) {
     return Object.freeze({
         // getAllTodos,

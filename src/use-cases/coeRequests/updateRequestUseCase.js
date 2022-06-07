@@ -20,6 +20,7 @@ module.exports = function makeUpdateRequests( CoeSchemaModel ) {
             let filter = { uuid: spreadsheetData[i].validation_link };
             let update = spreadsheetData[i];
             if(spreadsheetData[i].hasOwnProperty('validation_link')){
+              console.log('naay validation link:::::::::::::::::::::')
                 if(spreadsheetData[i].validation_link === data[j].uuid){
                     let doc = await CoeSchemaModel.findOneAndUpdate(filter, update);
                     updateStatus.push({

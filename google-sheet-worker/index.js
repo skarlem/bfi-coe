@@ -13,7 +13,7 @@ const accessSpreadSheet = async () => {
   try {
    
 // Initialize the sheet - doc ID is the long id in the sheets URL
-const doc = new GoogleSpreadsheet(`${process.env.SSW}`);
+const doc = new GoogleSpreadsheet(`${process.env.PROD_SSW}`);
 let currentDate = moment().format('M/D/YYYY'); 
 // Initialize Auth - see https://theoephraim.github.io/node-google-spreadsheet/#/getting-started/authentication
 await doc.useServiceAccountAuth(creds);
@@ -81,7 +81,7 @@ const addValidationLink = async (info) => {
   try {
    
 // Initialize the sheet - doc ID is the long id in the sheets URL
-const doc = new GoogleSpreadsheet(`${process.env.SSW}`);
+const doc = new GoogleSpreadsheet(`${process.env.PROD_SSW}`);
 // let currentDate = moment().format('D/M/YYYY'); 
 // Initialize Auth - see https://theoephraim.github.io/node-google-spreadsheet/#/getting-started/authentication
 await doc.useServiceAccountAuth(creds);
@@ -122,7 +122,7 @@ const fetchForUpdate = async () => {
   try {
    
 // Initialize the sheet - doc ID is the long id in the sheets URL
-const doc = new GoogleSpreadsheet(`${process.env.SSW}`);
+const doc = new GoogleSpreadsheet(`${process.env.PROD_SSW}`);
 let currentDate = moment().format('M/D/YYYY'); 
 // Initialize Auth - see https://theoephraim.github.io/node-google-spreadsheet/#/getting-started/authentication
 await doc.useServiceAccountAuth(creds);

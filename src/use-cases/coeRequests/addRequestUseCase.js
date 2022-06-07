@@ -20,8 +20,8 @@ module.exports = function makeAddNewCoeRequestsUseCase( CoeSchemaModel ) {
         for(let j =0; j <data.length; j++){
           // console.log('number of j ',j)
           for(let i=0; i<spreadsheetData.length; i++){
-            console.log(spreadsheetData[i].timestamp)
-            console.log(data[j].timestamp)
+            // console.log(spreadsheetData[i].timestamp)
+            // console.log(data[j].timestamp)
             if(spreadsheetData[i].timestamp === data[j].timestamp){
               // console.log('QQQQQQQQQQQQQQQQQQQ')
               spreadsheetData.splice(i,1);
@@ -37,7 +37,7 @@ module.exports = function makeAddNewCoeRequestsUseCase( CoeSchemaModel ) {
         // console.log(spreadsheetData)
         const insert = await CoeSchemaModel.create(spreadsheetData);
         const validate = await addValidationLink(spreadsheetData)
-        console.log('sheet data',spreadsheetData)
+        // console.log('sheet data',spreadsheetData)
         // spreadsheetData.uuid = uuid();
         // console.log('sheet data',spreadsheetData)
        
